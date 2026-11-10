@@ -1,9 +1,13 @@
 export class Admin {
-    emailAdm = "admin@gmail.com"
-    senhaAdm = "admin123"
+   static emailAdm = "admin@gmail.com"
+   static senhaAdm = "admin123"
 }
 
-export class Usuario{
-    emailUser = "user@gmail.com"
-    senhaUser = "user@gmail.com"
+export class Usuario {
+    constructor(nome,cpf,email,senha) {
+        this.nome = nome
+        this.cpf = cpf
+        this.email = email
+        this.senha = senha
+    }
 }

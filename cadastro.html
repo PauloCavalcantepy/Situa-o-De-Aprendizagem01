@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
+    <script src="resources/scripts/cadastro.js" defer type="module"></script>
+
 </head>
 <body>
-    
+    <form action="submit" id="formularioCadastro">
+        <div>
+            <label for="email">
+                <input id="email" type="email" name="email">
+            </label>
+        </div>
+        <div>
+            <label for="password">
+                <input id="password" type="password" name="password">
+            </label>
+        </div>
+        <div>
+            <label for="CPF">
+                <input id="CPF" type="number" name="cpf">
+            </label>
+        </div>
+        <div>
+            <label for="name">
+                <input id="nome" type="name" name="name">
+            </label>
+        </div>
+        <button type="submit">Click</button>
+    </form>
 </body>
 </html>
