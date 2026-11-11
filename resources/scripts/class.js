@@ -1,12 +1,14 @@
 
 export class Admin {
-   static emailAdm = "admin@gmail.com"
-   static senhaAdm = "admin123"
+    static emailAdm = "admin@gmail.com"
+    static senhaAdm = "admin123"
 }
 
 export class Usuario {
-    constructor(nome, cpf, email, senha, id = crypto.randomUUID()) {
-        this.id = id;
+    static nextId = 1;
+
+    constructor(nome, cpf, email, senha) {
+        this.id = Usuario.nextId++;
         this.nome = nome;
         this.cpf = cpf;
         this.email = email;
@@ -14,8 +16,8 @@ export class Usuario {
     }
 }
 
-export class GuardarUsuario{
-    static save(users){
+export class GuardarUsuario {
+    static save(users) {
         localStorage.setItem("users", JSON.stringify(users));
     }
 
@@ -44,10 +46,11 @@ export class GuardarUsuario{
         this.save(users);
     }
     static exists(email, cpf) {
-    const users = this.getAll();
+        const users = this.getAll();
 
-    return users.some(user =>
-        user.email.trim().toLowerCase() === email || user.cpf.trim().toLowerCase() === cpf
-    );
-}
+        return users.some(user =>
+            user.email.trim().toLowerCase() === email || user.cpf.trim().toLowerCase() === cpf
+        );
+    }
+    
 }

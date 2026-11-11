@@ -11,12 +11,12 @@
     <form action="submit" id="formularioCadastro">
         <div>
             <label for="name">
-               Nome <input id="nome" type="name" name="name" required maxlength="30">
+               Nome <input id="nome" type="text" name="name" required maxlength="30" pattern="[A-Za-zÀ-ÿ]+( [A-Za-zÀ-ÿ]+)*">
             </label>
         </div>
         <div>
             <label for="CPF">
-                CPF<input id="CPF" type="number" name="cpf" required maxlength="11" minlength="11">
+                CPF<input id="CPF" type="number" name="cpf" required maxlength="11" minlength="11" pattern="[A-Za-zÀ-ÿ]+( [A-Za-zÀ-ÿ]+)*">
             </label>
         </div>
         <div>
