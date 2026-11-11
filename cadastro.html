@@ -10,23 +10,23 @@
 <body>
     <form action="submit" id="formularioCadastro">
         <div>
-            <label for="email">
-                <input id="email" type="email" name="email">
-            </label>
-        </div>
-        <div>
-            <label for="password">
-                <input id="password" type="password" name="password">
+            <label for="name">
+               Nome <input id="nome" type="name" name="name" required maxlength="30">
             </label>
         </div>
         <div>
             <label for="CPF">
-                <input id="CPF" type="number" name="cpf">
+                CPF<input id="CPF" type="number" name="cpf" required maxlength="11" minlength="11">
             </label>
         </div>
         <div>
-            <label for="name">
-                <input id="nome" type="name" name="name">
+            <label for="email">
+                Email<input id="email" type="email" name="email" required>
+            </label>
+        </div>
+        <div>
+            <label for="password">
+                Password<input id="password" type="password" name="password" required >
             </label>
         </div>
         <button type="submit">Click</button>

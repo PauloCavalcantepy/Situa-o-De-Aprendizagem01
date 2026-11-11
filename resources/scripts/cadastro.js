@@ -1,5 +1,5 @@
 import {Usuario} from "./class.js"
-import { SaveUser } from "./SaveUser.js"
+import { GuardarUsuario } from "./class.js"
 
 let form = document.querySelector("#formularioCadastro")
 let emailInput = document.querySelector("#email")
@@ -14,9 +14,15 @@ form.addEventListener("submit", (e) => {
  let cpf = cpfInput.value;
  let senha = senhaInput.value;
 
+ if(GuardarUsuario.exists(email.trim().toLowerCase(),cpf.trim().toLowerCase())){
+     alert("Email ou CPF já cadastrado!");
+     return;
+    }
  let user = new Usuario(nome,cpf,email,senha)
- 
- let novoUsuario = new SaveUser(user);
- novoUsuario.store();
- 
+
+ GuardarUsuario.add(user)
+
+ var usuariosSaved = GuardarUsuario.getAll();
+ console.log(usuariosSaved)
+ form.reset();
 })
